@@ -94,7 +94,7 @@ for epoch in range(num_epochs):
         val_losses.append(val_loss)
 
     if val_loss/len(loader_val) < best_loss:
-        best_loss = loss
+        best_loss = val_loss/len(loader_val)
         torch.save(model.state_dict(), "model_10k.pth")
         if False:
             plt.subplot(1,3,1)
